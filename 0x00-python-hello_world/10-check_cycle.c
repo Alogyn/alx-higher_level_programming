@@ -11,14 +11,20 @@ int check_cycle(listint_t *list)
 {
     listint_t *slow = list, *fast = list;
 
+    /* Loop while 'slow', 'fast', and 'fast->next' are not NULL */
     while (slow && fast && fast->next)
     {
+	/* Move 'slow' one step at a time */
         slow = slow->next;
+
+	/* Move 'slow' one step at a time */
         fast = fast->next->next;
 
+	/* If 'slow' and 'fast' meet at the same node, there is a cycle */
         if (slow == fast)
             return (1);
     }
 
+    /* If the loop completes without finding a cycle, return 0 */
     return (0);
 }
