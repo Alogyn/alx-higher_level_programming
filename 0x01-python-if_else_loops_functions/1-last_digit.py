@@ -6,7 +6,7 @@ if number > 9 or number < -9:
 else:
     last_digit = number
 
-if last_digit < 6:
+if last_digit < 6 and last_digit not 0:
     print(f"Last digit of {number:d} is {last_digit:d}", end=' ')
     print("and is less than 6 and not 0")
 elif last_digit > 5:
