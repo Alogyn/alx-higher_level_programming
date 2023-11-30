@@ -6,7 +6,10 @@ if __name__ == "__main__":
     # In case 0 argument
     if length == 0:
         print("{} arguments.".format(length))
-    # In case one or more atguments
+    # In case 1 argument
+    elif length == 1:
+        print("{} argument:".format(length))
+    # In case more than 1 atguments
     else:
         print("{} arguments:".format(length))
         j = 0
