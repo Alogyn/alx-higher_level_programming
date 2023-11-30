@@ -12,8 +12,9 @@ if __name__ == "__main__":
     # In case more than 1 atguments
     else:
         print("{} arguments:".format(length))
-        j = 0
-        for i in sys.argv:
-            if j != 0:
-                print("{}: {}".format(j, i))
-            j = j + 1
+
+    j = 0
+    for i in sys.argv:
+        if j != 0:
+            print("{}: {}".format(j, i))
+        j = j + 1
