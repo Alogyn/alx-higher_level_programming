@@ -8,5 +8,5 @@ def delete_at(my_list=[], idx=0):
 
     # Delete the specific item in the list
     del my_list[idx]
-    
+
     return (my_list)
