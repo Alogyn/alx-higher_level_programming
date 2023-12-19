@@ -1,4 +1,4 @@
-#!/usr/bin/
+#!/usr/bin/python3
 """ Task 6. Coordinates of a square """
 
 
