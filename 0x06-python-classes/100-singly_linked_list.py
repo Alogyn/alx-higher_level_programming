@@ -87,7 +87,8 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """
-        Inserts a new Node into the correct sorted position in the list (increasing order).
+        Inserts a new Node into the correct sorted position
+        in the list (increasing order).
 
         Args:
             value (int): The value to be inserted.
@@ -99,7 +100,7 @@ class SinglyLinkedList:
             return
 
         current = self.head
-        while current.next_node and value >= current.next_node.data:
+        while current.next_node and value >= current.next_node.data0:
             current = current.next_node
 
         new_node.next_node = current.next_node
