@@ -1,10 +1,11 @@
-Testing the `0-add_integer` function
+Testing the `2-matrix_divided` function
 ==================================
 
-Using ``add_integer``
+Using ``matrix_divided``
 ---------------------
 
-Import the `add_integer` function from the module:
+Import the `matrix_divided` function from the module:
+
     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
 Test normal matrix:
