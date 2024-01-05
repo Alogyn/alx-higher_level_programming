@@ -1,2 +1,1 @@
-# alx-higher_level_programming
-Python is an art, trust me.
+About 0x09. Python - Everything is object
