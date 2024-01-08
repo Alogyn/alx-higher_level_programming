@@ -3,6 +3,7 @@
 Module for print_sorted function.
 '''
 
+
 class MyList(list):
     """
     MyList class that inherits from list.
