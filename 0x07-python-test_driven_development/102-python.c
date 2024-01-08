@@ -6,7 +6,7 @@
 #include <unicodeobject.h>
 
 /**
-  * print_python_sting - Prints info about python strings
+  * print_python_string - Prints info about python strings
   *
   * @p: Address of pyobject struct
   *
@@ -27,3 +27,4 @@ void print_python_string(PyObject *p)
 	wprintf(L"  length: %lu\n", PyUnicode_GET_LENGTH(p));
 	wprintf(L"  value: %ls\n", PyUnicode_AS_UNICODE(p));
 }
+
