@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-'''Module BaseGeometry class, area function & integer_validator function.'''
+'''
+Module BaseGeometry class, area function & integer_validator function.
+'''
 
 
 class BaseGeometry:
