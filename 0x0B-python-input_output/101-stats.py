@@ -1,38 +1,37 @@
 #!/usr/bin/python3
 import sys
 
+file_size = 0
+status_tally = {"200": 0, "301": 0, "400": 0, "401": 0,
+                "403": 0, "404": 0, "405": 0, "500": 0}
+i = 0
+try:
+    for line in sys.stdin:
+        tokens = line.split()
+        if len(tokens) >= 2:
+            a = i
+            if tokens[-2] in status_tally:
+                status_tally[tokens[-2]] += 1
+                i += 1
+            try:
+                file_size += int(tokens[-1])
+                if a == i:
+                    i += 1
+            except FileNotFoundError:
+                if a == i:
+                    continue
+        if i % 10 == 0:
+            print("File size: {:d}".format(file_size))
+            for key, value in sorted(status_tally.items()):
+                if value:
+                    print("{:s}: {:d}".format(key, value))
+    print("File size: {:d}".format(file_size))
+    for key, value in sorted(status_tally.items()):
+        if value:
+            print("{:s}: {:d}".format(key, value))
 
-def print_metrics(total_size, status_codes):
-    print("File size: {}".format(total_size))
-    for code in sorted(status_codes.keys()):
-        print("{}: {}".format(code, status_codes[code]))
-
-
-def parse_line(line):
-    try:
-        parts = line.split()
-        return int(parts[-1]), int(parts[-2])
-    except (ValueError, IndexError):
-        return 0, 0
-
-
-def main():
-    total_size = 0
-    status_codes = {'200': 0, '301': 0, '400': 0, '401': 0, '403': 0,
-                    '404': 0, '405': 0, '500': 0}
-    line_count = 0
-
-    try:
-        for line in sys.stdin:
-            line_count += 1
-            total_size += parse_line(line)[0]
-            status_code = parse_line(line)[1]
-            if str(status_code) in status_codes:
-                status_codes[str(status_code)] += 1
-
-            if line_count % 10 == 0:
-                print_metrics(total_size, status_codes)
-
-    except KeyboardInterrupt:
-        print_metrics(total_size, status_codes)
-        raise
+except KeyboardInterrupt:
+    print("File size: {:d}".format(file_size))
+    for key, value in sorted(status_tally.items()):
+        if value:
+            print("{:s}: {:d}".format(key, value))
