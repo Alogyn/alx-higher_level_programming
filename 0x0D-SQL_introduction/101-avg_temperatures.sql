@@ -1,4 +1,4 @@
--- Task 18. Temperatures #0
+-- Task 18. Temperatures #0 (Advanced)
 -- This script that displays the average temperature (Fahrenheit)
 -- by city ordered by temperature (descending)
 SELECT `city`, AVG(`value`) AS `avg_temp`
