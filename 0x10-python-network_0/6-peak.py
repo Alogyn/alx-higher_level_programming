@@ -13,8 +13,8 @@ def find_peak(list_of_integers):
             return arr[low]
 
         mid = (low + high) // 2
-        if (mid == 0 or arr[mid - 1] <= arr[mid]) and (mid == len(arr) - 1
-                or arr[mid + 1] <= arr[mid]):
+        if ((mid == 0 or arr[mid - 1] <= arr[mid]) and
+                (mid == len(arr) - 1 or arr[mid + 1] <= arr[mid])):
             return arr[mid]
         elif mid > 0 and arr[mid - 1] > arr[mid]:
             return binary_search(arr, low, mid - 1)
