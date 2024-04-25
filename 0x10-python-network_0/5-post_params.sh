@@ -1,3 +1,3 @@
 #!/bin/bash
-# Script to send a POST request with parameters and display the response body
+# Script to send a POST request with parameters and display the response bod
 curl -s -X POST -d "email=test@gmail.com&subject=I will always be here for PLD" "$1"
